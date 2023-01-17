@@ -3,7 +3,20 @@ using namespace std;
 
 template <typename T>
 void insertionSort(T d[],int N){
-
+for(int i=0;i<N-1;i++){
+		for(int j=i;j>=0;j--){
+			if(d[j]<d[j+1]){
+				T temp = d[j];
+				d[j]=d[j+1];
+				d[j+1]=temp;
+			}
+		}
+		cout << "Pass " << i+1 << ":";
+		for(int k=0 ;k<N;k++){
+			cout << d[k] << " ";
+		}
+		cout << "\n";
+	}
 }
 
 int main(){
@@ -17,3 +30,4 @@ int main(){
 	cout << "\nSorted Array:";
 	for(int i = 0; i < 10; i++) cout << a[i] << " ";	
 }
+
